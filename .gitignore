@@ -1,6 +1,25 @@
-/.phpunit.cache
+# /.phpunit.cache
+# /node_modules
+# /public/build
+# /public/hot
+# /public/storage
+# /storage/*.key
+# /vendor
+# .env
+# .env.backup
+# .env.production
+# .phpunit.result.cache
+# Homestead.json
+# Homestead.yaml
+# auth.json
+# npm-debug.log
+# yarn-error.log
+# /.fleet
+# /.idea
+# /.vscode
+
+# Laravel
 /node_modules
-/public/build
 /public/hot
 /public/storage
 /storage/*.key
@@ -14,6 +33,47 @@ Homestead.yaml
 auth.json
 npm-debug.log
 yarn-error.log
-/.fleet
+
+# IDE et Éditeurs
 /.idea
 /.vscode
+*.swp
+*.swo
+*~
+.project
+.buildpath
+.settings
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker (si vous ne voulez pas versionner certains fichiers)
+/docker/postgres/data
+/.docker/postgres/data
+
+# Logs
+*.log
+/storage/logs/*
+
+# Backups
+*.sql
+*.dump
+backup/
+
+# Compiled assets (si vous utilisez npm/vite)
+/public/build
+/public/mix-manifest.json
+/public/css
+/public/js
+
+# Tests
+/coverage
+/.phpunit.cache

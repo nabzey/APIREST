@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+// API v1 Routes (sans authentification selon les spécifications)
+Route::prefix('v1')->group(function () {
+
+    // Routes pour les comptes bancaires
+    Route::apiResource('comptes', \App\Http\Controllers\Api\V1\CompteController::class);
+
+    // Routes pour les clients
+    Route::apiResource('clients', \App\Http\Controllers\Api\V1\ClientController::class);
 });

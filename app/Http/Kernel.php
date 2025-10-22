@@ -15,10 +15,10 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
-        \App\Http\Middleware\TrustProxies::class,
-        \Illuminate\Http\Middleware\HandleCors::class,
-        \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
-        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+        \App\Http\Middleware\TrustProxies::class,   //La gestion des proxies HTTP et leurs en-têtes (TrustProxies)
+        \Illuminate\Http\Middleware\HandleCors::class, //Les règles CORS (cross-origin request)
+        \App\Http\Middleware\PreventRequestsDuringMaintenance::class, //Empêcher des requêtes durant le mode maintenance
+        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class, //Valider la taille maximale des POST
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ];
@@ -66,3 +66,11 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
 }
+
+// Kernel agence la pile de middlewares globale, groupée et aliasée.
+
+// Les middlewares filtrent les requêtes HTTP selon la sécurité, sessions, validation, stockage cookies etc.
+
+// Ils sont essentiels pour la sécurité, la gestion des sessions, et la bonne exécution des routes.
+
+// C’est un composant clé du cycle de vie des requêtes web dans Laravel.
